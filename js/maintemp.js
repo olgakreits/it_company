@@ -14,7 +14,7 @@ window.onload = function() {
         let email = document.querySelector('.form-section__input');
         let formDescription = document.querySelector('#form-section__desc');
         let formButton = document.querySelector('.form-section__button');
-        formButton.onclick = function(e) {
+        formButton.addEventListener('click', function(e) {
             e.preventDefault();
             if (!validateEmail(email.value)) {
                 formDescription.style.color = 'red';
@@ -26,7 +26,7 @@ window.onload = function() {
                     formDescription.innerHTML = data;
                 });
             }
-        }
+        });
 
         function validateEmail(mail) {
             let tmpMail = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
